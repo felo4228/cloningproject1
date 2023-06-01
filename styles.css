@@ -1,9 +1,7 @@
 /* Reset some default styles */
 
 
-#onep {
-  width: 500px; height: 200px;
-}
+
 
 ul {
   list-style-type: none;
@@ -11,10 +9,13 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+  position: sticky;
+
 }
 
 li {
   float: left;
+  border-right: 1px solid #bbb;
 }
 
 li a {
@@ -48,13 +49,14 @@ li a:hover:not(.active) {
 }
 
 #firstimg{
-  height: 500px;
   width: 100%;
 }
 
 #header {
   background-color: ghostwhite;
+  
 }
+
 
 #aboutus {
   text-align: center;
@@ -97,9 +99,109 @@ li a:hover:not(.active) {
   color: #333;
 }
 
-.gallery {
-  height: 200px;
-  width:  233px;
+
+.grid-container {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
 }
+
+@media all and (max-width: 600px){
+
+  .grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media all and (max-width: 400px){
+
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.photobot .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 25px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.photobot .btn:hover {
+  background-color: black;
+  color: white;
+}
+
+
+
+
+.team-member {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  text-align: center;
+  font-family: monospace;
+  font-size: 150%;
+}
+
+@media all and (max-width: 600px){
+
+  .team-member {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media all and (max-width: 400px){
+
+  .team-member {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+#titleteam {
+  text-align: center;
+  font-family: monospace ;
+  font-size: 250%;
+  color: #333;
+}
+
+
+
+.caption {
+  padding-top: 20px;
+
+}
+
+#footer {
+  padding-top: 30px;
+  text-align: center;
+  font-family: monospace;
+  font-size: 100%;
+  background-color: whitesmoke;
+}
+
+
+
+
+
+
+
 
 
