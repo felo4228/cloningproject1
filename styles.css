@@ -1,5 +1,6 @@
 /* Reset some default styles */
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); /* import font */
 
 
 
@@ -47,14 +48,42 @@ li a:hover:not(.active) {
   font-size: 200%;
   color: #333;
 }
-
+/*
 #firstimg{
   width: 100%;
 }
+*/
 
-#header {
+.header {
   background-color: ghostwhite;
-  
+}
+
+#splash-screen {
+  /* setting height and width */
+  min-height: 100vh;
+  width: 100%;
+/* adding background image */
+  background-image: url("./assets/craftbeer.jpg");
+/* assign the center of the image to be in the center of the container */
+  background-position: center;
+/* prevent repeating or tiling of the image */
+  background-repeat: no-repeat;
+/* resize image to take all the space */
+  background-size: cover;
+/* fix the image to prevent scrolling for some extra nice parallax effect */
+  background-attachment: fixed;
+/* make section flex */
+  display:flex;
+/* vertically center elements */
+  align-items: center;
+/* horizontally center elements */
+  justify-content: center;
+/* align element to the center within their position */
+  text-align: center;
+  /* make text white */
+  color: white;
+  background-color: ghostwhite;
+  padding: 10px;
 }
 
 
@@ -116,20 +145,46 @@ li a:hover:not(.active) {
 
 }
 
-@media all and (max-width: 400px){
+@media all and (max-width: 442px){
 
   .grid-container {
     grid-template-columns: 1fr;
   }
+.hamburger {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-content {
+  display: none;
+  position: absolute;
+  left:0;
+  z-index:1;
+}
+
+.hamburger:hover .hamburger-content {
+  display: block;
+/* animation: popup .5s ease-in-out both; */
+}
+
+.hamburger span {
+  transition: transform .5s;
+-webkit-transition: -webkit-transform .5s;
+  display: block;
+  transform: rotate(90deg);
+}
+
+.hamburger:hover span {
+  transition: transform .5s;
+-webkit-transition: -webkit-transform .5s;
+  display: inline-block;
+  transform: rotate(180deg);
+}
 
 }
 
-.photobot .btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  .btn {
+  
   background-color: #f1f1f1;
   color: black;
   font-size: 25px;
@@ -140,7 +195,7 @@ li a:hover:not(.active) {
   text-align: center;
 }
 
-.photobot .btn:hover {
+  .btn:hover {
   background-color: black;
   color: white;
 }
@@ -167,13 +222,47 @@ li a:hover:not(.active) {
 
 }
 
-@media all and (max-width: 400px){
+@media all and (max-width: 442px){
 
   .team-member {
     grid-template-columns: 1fr;
   }
 
+  #hamburger-menu {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border: none;
+    padding: 0px;
+    margin: 20px;
+    background: linear-gradient(
+      to bottom, 
+      #3D0E61, #3D0E61 20%, 
+      white 20%, white 40%, 
+      #3D0E61 40%, #3D0E61 60%, 
+      white 60%, white 80%, 
+      #3D0E61 80%, #3D0E61 100%
+    );
 }
+
+#hamburger-menu #sidebar-menu {
+    visibilty: hidden;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 100%;
+    background-color: #3D0E61;
+    padding: 0px 10px;
+    box-sizing: border-box;
+}
+
+}
+
+
+   
+
+ 
 
 #titleteam {
   text-align: center;
